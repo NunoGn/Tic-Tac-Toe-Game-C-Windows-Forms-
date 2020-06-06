@@ -71,6 +71,24 @@ namespace TicTacToeGame
             }
         }
 
+        public void Winner(int WinnerPlayer)
+        {
+            endGame = true;
+
+            if (WinnerPlayer == 1)
+            {
+                MessageBox.Show("Player X Wons");
+                shift = true;
+            }
+            else
+            {
+                MessageBox.Show("Player O Wons");
+                shift = false;
+            }
+        }
+
+
+
         public void PlayerTurn(int CheckPlayer) //method will check who plays
         {
             string symbol = "";
@@ -90,6 +108,7 @@ namespace TicTacToeGame
                 {
                     if (game[horizontal] == game[horizontal + 1] && game[horizontal] == game[horizontal + 2])
                     {
+                        Winner(CheckPlayer);
                         return;
                     }
                 }
@@ -102,6 +121,7 @@ namespace TicTacToeGame
                 {
                     if (game[vertical] == game[vertical + 3] && game[vertical] == game[vertical + 6])
                     {
+                        Winner(CheckPlayer);
                         return;
                     }
                 }
@@ -113,7 +133,7 @@ namespace TicTacToeGame
             {
                 if (game[0] == game[4] && game[0] == game[8])
                 {
-                    MessageBox.Show("ja esta");
+                    Winner(CheckPlayer);                    
                     return;
                 }                
             }          
@@ -121,7 +141,7 @@ namespace TicTacToeGame
             {
                 if (game[2] == game[4] && game[2] == game[6])
                 {
-                    MessageBox.Show("Boa");
+                    Winner(CheckPlayer);                    
                     return;
                 }
             }
