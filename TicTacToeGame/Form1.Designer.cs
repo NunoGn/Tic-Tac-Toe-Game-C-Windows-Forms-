@@ -242,6 +242,7 @@
             this.btNewGame.TabIndex = 9;
             this.btNewGame.Text = "Novo Jogo";
             this.btNewGame.UseVisualStyleBackColor = false;
+            this.btNewGame.Click += new System.EventHandler(this.btNewGame_Click);
             // 
             // btReset
             // 

@@ -15,7 +15,7 @@ namespace TicTacToeGame
 
         //DECLARATION OF VARIABLES
 
-        int xWins, xDraws, xDefeats, oWins, oDraws, oDefeats, round = 0;
+        int xWins, xDefeats, oWins, draws, oDefeats, round = 0;
         bool shift = true;
         bool endGame = false;
         string[] game = new string[9];
@@ -27,9 +27,14 @@ namespace TicTacToeGame
             InitializeComponent();
         }
 
-        private void frmPainelJogo_Load(object sender, EventArgs e)
+        private void btNewGame_Click(object sender, EventArgs e)
         {
             DefaultValues();
+        }
+
+        private void frmPainelJogo_Load(object sender, EventArgs e)
+        {
+            
         }
 
         public void DefaultValues()
@@ -41,6 +46,25 @@ namespace TicTacToeGame
             lblDraws.Text = "0";
             lblXdefeats.Text = "0";
             lblOdefeats.Text = "0";
+
+            endGame = false;
+
+            //CLEAN BOARD
+            btPos1.Text = "";
+            btPos2.Text = "";
+            btPos3.Text = "";
+            btPos4.Text = "";
+            btPos5.Text = "";
+            btPos6.Text = "";
+            btPos7.Text = "";
+            btPos8.Text = "";
+            btPos9.Text = "";
+
+            //CLEAND ARRAY
+            for (int i = 0; i < 9; i++)
+            {
+                game[i] = "";
+            }
         }
 
         private void btPos1_Click(object sender, EventArgs e)
@@ -156,8 +180,9 @@ namespace TicTacToeGame
 
             if (round == 9 && endGame == false) //will check a draw
             {
-
-                MessageBox.Show("Draw");
+                draws++;
+                lblDraws.Text = Convert.ToString(draws);
+                MessageBox.Show("Draw!");
                 endGame = true;
                 return;
             }
