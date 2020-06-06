@@ -29,7 +29,25 @@ namespace TicTacToeGame
 
         private void btNewGame_Click(object sender, EventArgs e)
         {
-            DefaultValues();
+
+            var result = MessageBox.Show("Start new game? ", "Information", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                NewGame();
+            }
+
+           
+        }
+
+        private void btLeaveGame_Click(object sender, EventArgs e)
+        {
+             var result = MessageBox.Show("Leave the game? ", "Warning", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }            
         }
 
         private void frmPainelJogo_Load(object sender, EventArgs e)
@@ -37,18 +55,20 @@ namespace TicTacToeGame
             
         }
 
-        public void DefaultValues()
+        private void btReset_Click(object sender, EventArgs e)
         {
-            //DEFAULT VALUES
 
-            lblXwins.Text = "0";
-            lblOwins.Text = "0";          
-            lblDraws.Text = "0";
-            lblXdefeats.Text = "0";
-            lblOdefeats.Text = "0";
+            var result = MessageBox.Show("Reset Score and current game? ", "Warning", MessageBoxButtons.YesNo);
 
-            endGame = false;
+            if (result == DialogResult.Yes)
+            {
+                DefaultValues();
+            }
+           
+        }
 
+        public void NewGame() // reset the board // array and the numer off rounds but not the score
+        {
             //CLEAN BOARD
             btPos1.Text = "";
             btPos2.Text = "";
@@ -65,6 +85,24 @@ namespace TicTacToeGame
             {
                 game[i] = "";
             }
+
+            //RESET NUMBER OF ROUNDS
+            round = 0;
+            endGame = false;
+            shift = true;
+        }
+
+        public void DefaultValues() //Only for reset entire game
+        {
+            //DEFAULT VALUES
+
+            lblXwins.Text = "0";
+            lblOwins.Text = "0";          
+            lblDraws.Text = "0";
+            lblXdefeats.Text = "0";
+            lblOdefeats.Text = "0";
+
+            NewGame();
         }
 
         private void btPos1_Click(object sender, EventArgs e)
