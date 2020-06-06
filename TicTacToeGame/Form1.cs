@@ -15,7 +15,7 @@ namespace TicTacToeGame
 
         //DECLARATION OF VARIABLES
 
-        int xWins, xDraws, xdefeats, oWins, oDraws, oDefeats, round = 0;
+        int xWins, xDraws, xDefeats, oWins, oDraws, oDefeats, round = 0;
         bool shift = true;
         bool endGame = false;
         string[] game = new string[9];
@@ -37,9 +37,8 @@ namespace TicTacToeGame
             //DEFAULT VALUES
 
             lblXwins.Text = "0";
-            lblOwins.Text = "0";
-            lblXdraws.Text = "0";
-            lblOdraws.Text = "0";
+            lblOwins.Text = "0";          
+            lblDraws.Text = "0";
             lblXdefeats.Text = "0";
             lblOdefeats.Text = "0";
         }
@@ -71,18 +70,27 @@ namespace TicTacToeGame
             }
         }
 
-        public void Winner(int WinnerPlayer)
+        public void Winner(int WinnerPlayer) // Will check Winner
         {
             endGame = true;
 
             if (WinnerPlayer == 1)
             {
-                MessageBox.Show("Player X Wons");
+
+                xWins++;
+                lblXwins.Text = Convert.ToString(xWins);
+                oDefeats++;
+                lblOdefeats.Text = Convert.ToString(oDefeats);
+                MessageBox.Show("Player X Wons!");
                 shift = true;
             }
             else
             {
-                MessageBox.Show("Player O Wons");
+                oWins++;
+                lblOwins.Text = Convert.ToString(oWins);
+                xDefeats++;
+                lblXdefeats.Text = Convert.ToString(xDefeats);
+                MessageBox.Show("Player O Wons!");
                 shift = false;
             }
         }
@@ -129,21 +137,29 @@ namespace TicTacToeGame
 
             //Check Diagonal
 
-            if(game[0] == symbol)
+            if (game[0] == symbol)
             {
                 if (game[0] == game[4] && game[0] == game[8])
                 {
-                    Winner(CheckPlayer);                    
+                    Winner(CheckPlayer);
                     return;
-                }                
-            }          
-            if(game[2] == symbol)
+                }
+            }
+            if (game[2] == symbol)
             {
                 if (game[2] == game[4] && game[2] == game[6])
                 {
-                    Winner(CheckPlayer);                    
+                    Winner(CheckPlayer);
                     return;
                 }
+            }
+
+            if (round == 9 && endGame == false) //will check a draw
+            {
+
+                MessageBox.Show("Draw");
+                endGame = true;
+                return;
             }
         }
     }

@@ -45,14 +45,11 @@
             this.btNewGame = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.gboxScore = new System.Windows.Forms.GroupBox();
-            this.lblOdraws = new System.Windows.Forms.Label();
-            this.lblXdraws = new System.Windows.Forms.Label();
+            this.lblDraws = new System.Windows.Forms.Label();
             this.lblOdefeats = new System.Windows.Forms.Label();
             this.lblXdefeats = new System.Windows.Forms.Label();
             this.lblOwins = new System.Windows.Forms.Label();
             this.lblXwins = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -262,14 +259,11 @@
             // 
             // gboxScore
             // 
-            this.gboxScore.Controls.Add(this.lblOdraws);
-            this.gboxScore.Controls.Add(this.lblXdraws);
+            this.gboxScore.Controls.Add(this.lblDraws);
             this.gboxScore.Controls.Add(this.lblOdefeats);
             this.gboxScore.Controls.Add(this.lblXdefeats);
             this.gboxScore.Controls.Add(this.lblOwins);
             this.gboxScore.Controls.Add(this.lblXwins);
-            this.gboxScore.Controls.Add(this.label9);
-            this.gboxScore.Controls.Add(this.label10);
             this.gboxScore.Controls.Add(this.label7);
             this.gboxScore.Controls.Add(this.label8);
             this.gboxScore.Controls.Add(this.label6);
@@ -285,25 +279,15 @@
             this.gboxScore.TabStop = false;
             this.gboxScore.Text = "Score";
             // 
-            // lblOdraws
+            // lblDraws
             // 
-            this.lblOdraws.AutoSize = true;
-            this.lblOdraws.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOdraws.Location = new System.Drawing.Point(289, 79);
-            this.lblOdraws.Name = "lblOdraws";
-            this.lblOdraws.Size = new System.Drawing.Size(15, 15);
-            this.lblOdraws.TabIndex = 14;
-            this.lblOdraws.Text = "0";
-            // 
-            // lblXdraws
-            // 
-            this.lblXdraws.AutoSize = true;
-            this.lblXdraws.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblXdraws.Location = new System.Drawing.Point(289, 53);
-            this.lblXdraws.Name = "lblXdraws";
-            this.lblXdraws.Size = new System.Drawing.Size(15, 15);
-            this.lblXdraws.TabIndex = 13;
-            this.lblXdraws.Text = "0";
+            this.lblDraws.AutoSize = true;
+            this.lblDraws.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDraws.Location = new System.Drawing.Point(276, 60);
+            this.lblDraws.Name = "lblDraws";
+            this.lblDraws.Size = new System.Drawing.Size(15, 15);
+            this.lblDraws.TabIndex = 13;
+            this.lblDraws.Text = "0";
             // 
             // lblOdefeats
             // 
@@ -344,26 +328,6 @@
             this.lblXwins.Size = new System.Drawing.Size(15, 15);
             this.lblXwins.TabIndex = 3;
             this.lblXwins.Text = "0";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(255, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 17);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "O =";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(255, 53);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 17);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "X =";
             // 
             // label7
             // 
@@ -507,14 +471,11 @@
         private System.Windows.Forms.Label lblDerrotas;
         private System.Windows.Forms.Label lblVitorias;
         private System.Windows.Forms.Button btLeaveGame;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblOdraws;
-        private System.Windows.Forms.Label lblXdraws;
+        private System.Windows.Forms.Label lblDraws;
         private System.Windows.Forms.Label lblOdefeats;
         private System.Windows.Forms.Label lblXdefeats;
         private System.Windows.Forms.Label lblOwins;
